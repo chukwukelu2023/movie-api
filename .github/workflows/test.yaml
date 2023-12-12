@@ -16,7 +16,7 @@ jobs:
 
     steps:
       - name: Checks out to the repo
-        uses: actions/checkout@4
+        uses: actions/checkout@3
 
       - name: Configure Node
         uses: actions/setup-node@v3
