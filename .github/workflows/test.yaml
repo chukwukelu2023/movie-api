@@ -10,16 +10,16 @@ jobs:
   build-and-test:
     runs-on: ubuntu-latest
 
-    defaults:
-      run:
-        shell: bash
+    # defaults:
+    #   run:
+    #     shell: bash
 
     steps:
       - name: Checks out to the repo
-        uses: actions/checkout@3
+        uses: actions/checkout@4
 
       - name: Configure Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
 
 
       - name: Install Dependecies
