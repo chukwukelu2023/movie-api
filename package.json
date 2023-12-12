@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "test": "jest --watchAll --verbose --detectOpenHandles"
+    "test": "jest --verbose --no-cache  --detectOpenHandles --runInBand --forceExit"
   },
   "jest":{
     "testEnvironment": "node"
