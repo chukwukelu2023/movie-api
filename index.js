@@ -1,7 +1,14 @@
 const express = require("express")
 require('express-async-errors')
 const winston = require('winston')
-require('./dbConnect/dbconnection')()
+require('dotenv').config()
+const { connectDB } = require("./dbConnect/testDb");
+
+if(process.env.NODE_ENV === "test"){
+    connectDB()
+}else{
+    require('./dbConnect/dbconnection')()   
+}
 
 const app = express()
 require('./routes/routes')(app)
