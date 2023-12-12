@@ -1,0 +1,30 @@
+name: Test and Deploy Backend Application
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - development
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+      - name: Checks out to the repo
+        uses: actions/checkout@4
+
+      - name: Configure Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 16
+
+      - name: Install Dependecies
+        run: npm ci
+
+      - name: Run tests
+        run: npm test
