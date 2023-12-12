@@ -10,9 +10,9 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
-    # defaults:
-    #   run:
-    #     shell: bash
+    defaults:
+      run:
+        shell: bash
 
     steps:
       - name: Checks out to the repo
@@ -20,6 +20,8 @@ jobs:
 
       - name: Configure Node
         uses: actions/setup-node@v4
+        with:
+          node-version: 16
 
 
       - name: Install Dependecies

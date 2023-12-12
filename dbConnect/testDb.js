@@ -31,4 +31,4 @@ const dropDB = async () => {
     }
   };
 
-  module.exports = { connectDB, dropDB, dropCollections,testDBUri}
+  module.exports = { connectDB, dropDB, dropCollections}
