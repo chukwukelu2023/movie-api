@@ -1,0 +1,32 @@
+name: Working with Artifacts
+
+on: 
+  push:
+    branches:
+      - development
+
+jobs:
+  
+  archive-build-artifacts:
+   runs-on: ubuntu-latest
+
+   defaults:
+     run:
+      shell: bash
+   steps:
+     - name: Step 1 - Create Temporary Artifacts Download Folder
+       run: mkdir downloads
+
+     - name: Step 2- Add Artifacts to temp Folder
+       run: |
+          cd downloads
+          echo 'alpha'    > alpha.html
+          echo 'bravo'    > bravo.html
+          echo 'charlie'  > charlie.html
+          cd ..
+
+     - name: Step 3 - Upload Artifacts
+       uses: actions/upload-artifact@v2
+       with:
+         name: assets for download
+         path: downloads
